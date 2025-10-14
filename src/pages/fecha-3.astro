@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResultTable from '../components/ResultTable.astro';
+import GoalScorersTable from '../components/GoalScorersTable.astro';
+import Gallery from '../components/Gallery.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+
+// Importar datos
+import fecha3Data from '../data/fecha-3.json';
+---
+
+<Layout title="Fecha 3 - Jornada Final Grupos | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-green to-brutal-yellow py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-brutal text-4xl sm:text-6xl lg:text-7xl text-brutal-black mb-4">
+        FECHA 3
+      </h1>
+      <div class="bg-brutal-black text-brutal-white px-6 py-4 border-4 border-brutal-green shadow-brutal-lg inline-block">
+        <h2 class="font-brutal text-xl sm:text-2xl uppercase">
+          {fecha3Data.titulo}
+        </h2>
+        <p class="font-mono text-sm sm:text-base">
+          {fecha3Data.fecha} • {fecha3Data.lugar}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Descripción -->
+      <BrutalCard variant="default" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          🏁 Definición de Clasificados
+        </h3>
+        <p class="text-brutal-black leading-relaxed mb-4">
+          La tercera y última fecha de la fase de grupos, disputada el <strong>3 de octubre de 2025</strong>, 
+          definió a los 8 equipos que avanzaron a los cuartos de final del torneo.
+        </p>
+        <p class="text-brutal-black leading-relaxed">
+          Fue una jornada llena de emociones donde varios equipos se jugaron su clasificación hasta el último minuto, 
+          demostrando el alto nivel competitivo del campeonato y la paridad existente entre las instituciones participantes.
+        </p>
+      </BrutalCard>
+
+      <!-- Tabla de Resultados -->
+      <ResultTable 
+        partidos={fecha3Data.partidos} 
+        title="Resultados Fecha 3" 
+      />
+
+      <!-- Goleadores -->
+      <GoalScorersTable 
+        goleadores={fecha3Data.goleadores}
+        title="Goleadores Destacados - Fecha 3"
+      />
+
+      <!-- Clasificados -->
+      <BrutalCard variant="primary" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-6 uppercase">
+          🎯 Equipos Clasificados a Cuartos de Final
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-brutal-red text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#1 RETO 365 PASTO</h4>
+            <p class="font-mono text-sm">Grupo C - Puntaje Perfecto</p>
+          </div>
+          <div class="bg-brutal-blue text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#2 TANGUA FUTSAL</h4>
+            <p class="font-mono text-sm">Grupo A - Campaña Destacada</p>
+          </div>
+          <div class="bg-brutal-green text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#3 CORDILLERA F.C.</h4>
+            <p class="font-mono text-sm">Grupo B - Sólida Defensa</p>
+          </div>
+          <div class="bg-brutal-purple text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#4 CRACKS FUTSALON</h4>
+            <p class="font-mono text-sm">Grupo B - Gran Nivel</p>
+          </div>
+          <div class="bg-brutal-yellow text-brutal-black p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#5 ELYON F.C.</h4>
+            <p class="font-mono text-sm">Grupo A - Efectividad</p>
+          </div>
+          <div class="bg-brutal-pink text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#6 BALÓN DE ORO</h4>
+            <p class="font-mono text-sm">Grupo C - Competitividad</p>
+          </div>
+          <div class="bg-brutal-gray text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#7 SEMILLEROS CUMBAL</h4>
+            <p class="font-mono text-sm">Grupo A - Sorpresa</p>
+          </div>
+          <div class="bg-brutal-red text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h4 class="font-brutal text-lg mb-2">#8 FUTURAS ESTRELLAS</h4>
+            <p class="font-mono text-sm">Grupo B - Último Cupo</p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Estadísticas Acumuladas -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <BrutalCard variant="danger" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">41</h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">Goles Reto 365</p>
+          <p class="font-mono text-xs text-brutal-white">Máximo anotador</p>
+        </BrutalCard>
+        
+        <BrutalCard variant="secondary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">20</h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">Goles Tangua</p>
+          <p class="font-mono text-xs text-brutal-white">Segundo lugar</p>
+        </BrutalCard>
+        
+        <BrutalCard variant="primary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-black mb-2">9</h4>
+          <p class="font-brutal text-lg text-brutal-black uppercase">Puntos Máximos</p>
+          <p class="font-mono text-xs text-brutal-black">Reto 365 y Tangua</p>
+        </BrutalCard>
+
+        <BrutalCard class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-black mb-2">8</h4>
+          <p class="font-brutal text-lg text-brutal-black uppercase">Clasificados</p>
+          <p class="font-mono text-xs text-brutal-black">A cuartos de final</p>
+        </BrutalCard>
+      </div>
+
+      <!-- Momentos Decisivos -->
+      <BrutalCard variant="danger" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-white mb-4 uppercase">
+          ⚡ Momentos Decisivos de la Clasificación
+        </h3>
+        <div class="space-y-4 text-brutal-white">
+          <div class="bg-brutal-yellow text-brutal-black p-4 border-4 border-brutal-black">
+            <h4 class="font-brutal text-lg mb-2">🎯 ELYON F.C. SE IMPONE 11-1</h4>
+            <p class="font-mono text-sm">
+              Gran actuación ante Club Deportivo Bellavista que aseguró su clasificación con autoridad.
+            </p>
+          </div>
+          <div class="bg-brutal-green text-brutal-white p-4 border-4 border-brutal-black">
+            <h4 class="font-brutal text-lg mb-2">🚀 CORDILLERA GOLEÓ 7-2</h4>
+            <p class="font-mono text-sm">
+              Victoria convincente ante JLC Ancuya que consolidó su segundo lugar en el Grupo B.
+            </p>
+          </div>
+          <div class="bg-brutal-blue text-brutal-white p-4 border-4 border-brutal-black">
+            <h4 class="font-brutal text-lg mb-2">⚽ RETO 365 IMPARABLE</h4>
+            <p class="font-mono text-sm">
+              Goleada 20-0 ante Lobeznos que confirmó su dominio absoluto en el torneo.
+            </p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Galería -->
+      <Gallery images={fecha3Data.imagenes} title="Galería - Fecha 3" />
+      
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tangua-futsal",
+    "nombre": "Tangua Futsal",
+    "codigo": "1A",
+    "grupo": "A",
+    "logo": "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "club-bellavista",
+    "nombre": "Club Deportivo Bellavista", 
+    "codigo": "2A",
+    "grupo": "A",
+    "logo": "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "semilleros-cumbal",
+    "nombre": "Semilleros Estrellas Cumbal",
+    "codigo": "3A", 
+    "grupo": "A",
+    "logo": "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "elyon-fc",
+    "nombre": "Elyon F.C.",
+    "codigo": "4A",
+    "grupo": "A", 
+    "logo": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "cracks-futsalon",
+    "nombre": "Cracks Futsalon Pasto",
+    "codigo": "1B",
+    "grupo": "B",
+    "logo": "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "cordillera-fc",
+    "nombre": "Cordillera F.C. Pasto",
+    "codigo": "2B", 
+    "grupo": "B",
+    "logo": "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "futuras-estrellas",
+    "nombre": "Futuras Estrellas Nariño",
+    "codigo": "3B",
+    "grupo": "B",
+    "logo": "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "jlc-ancuya",
+    "nombre": "JLC Ancuya",
+    "codigo": "4B",
+    "grupo": "B", 
+    "logo": "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "lobeznos-tangua",
+    "nombre": "Lobeznos F.C. Tangua",
+    "codigo": "1C",
+    "grupo": "C",
+    "logo": "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "real-falcon",
+    "nombre": "Real Falcón Pasto",
+    "codigo": "2C",
+    "grupo": "C", 
+    "logo": "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "reto-365",
+    "nombre": "Reto 365 Pasto",
+    "codigo": "3C",
+    "grupo": "C",
+    "logo": "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  },
+  {
+    "id": "balon-oro",
+    "nombre": "Balón de Oro Pasto", 
+    "codigo": "4C",
+    "grupo": "C",
+    "logo": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+  }
+]

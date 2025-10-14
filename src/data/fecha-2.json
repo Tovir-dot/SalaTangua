@@ -1,0 +1,54 @@
+{
+  "titulo": "Fecha 2 - Segunda Jornada",
+  "fecha": "2025-10-02", 
+  "lugar": "Coliseo Municipal de Tangua",
+  "partidos": [
+    {
+      "hora": "13:30",
+      "equipo_local": "Real Falcón Pasto",
+      "equipo_visitante": "Reto 365 Pasto",
+      "resultado_local": 1,
+      "resultado_visitante": 14,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "14:30",
+      "equipo_local": "Club Deportivo Bellavista", 
+      "equipo_visitante": "Semilleros Estrellas Cumbal",
+      "resultado_local": 1,
+      "resultado_visitante": 5,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "15:30",
+      "equipo_local": "JLC Ancuya",
+      "equipo_visitante": "Cracks Futsalon Pasto",
+      "resultado_local": 1,
+      "resultado_visitante": 6,
+      "estado": "finalizado"
+    }
+  ],
+  "goleadores": [
+    {
+      "nombre": "Jhon Burbano Martinez",
+      "equipo": "Reto 365 Pasto",
+      "goles": 5
+    },
+    {
+      "nombre": "Santiago Timana Diaz", 
+      "equipo": "Tangua Futsal",
+      "goles": 3
+    },
+    {
+      "nombre": "Aaron Sebastian Rico Ruano",
+      "equipo": "Cracks Futsalon Pasto", 
+      "goles": 3
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

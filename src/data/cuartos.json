@@ -1,0 +1,63 @@
+{
+  "titulo": "Cuartos de Final",
+  "fecha": "2025-10-04", 
+  "lugar": "Coliseo Municipal de Tangua",
+  "partidos": [
+    {
+      "hora": "09:00",
+      "equipo_local": "Reto 365 Pasto",
+      "equipo_visitante": "Futuras Estrellas Nariño",
+      "resultado_local": 6,
+      "resultado_visitante": 2,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "10:00",
+      "equipo_local": "Cracks Futsalon Pasto", 
+      "equipo_visitante": "Elyon F.C. Pasto",
+      "resultado_local": 4,
+      "resultado_visitante": 5,
+      "estado": "finalizado",
+      "penales": true
+    },
+    {
+      "hora": "11:00",
+      "equipo_local": "Tangua Futsal",
+      "equipo_visitante": "Semilleros Estrellas Cumbal",
+      "resultado_local": 6,
+      "resultado_visitante": 5,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "12:00",
+      "equipo_local": "Cordillera F.C. Pasto",
+      "equipo_visitante": "Balón de Oro Pasto",
+      "resultado_local": 8,
+      "resultado_visitante": 1,
+      "estado": "finalizado"
+    }
+  ],
+  "goleadores": [
+    {
+      "nombre": "Jhon Burbano Martinez", 
+      "equipo": "Reto 365 Pasto",
+      "goles": 12
+    },
+    {
+      "nombre": "Santiago Timana Diaz",
+      "equipo": "Tangua Futsal",
+      "goles": 10
+    },
+    {
+      "nombre": "Johan Rosero Riascos",
+      "equipo": "Reto 365 Pasto", 
+      "goles": 6
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

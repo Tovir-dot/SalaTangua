@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+import BrutalButton from '../components/BrutalButton.astro';
+import Gallery from '../components/Gallery.astro';
+
+// Importar datos
+import * as resultadosData from '../data/resultados-finales.json' assert { type: 'json' };
+
+const resultadosFinales: any = resultadosData;
+
+const heroImages = [
+  "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+  "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+  "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+  "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+  "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+  "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+];
+---
+
+<Layout title="Baby Fútbol Sala Sur Occidente de Colombia - Tangua 2025">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-brutal-green to-brutal-blue min-h-screen flex items-center justify-center">
+    <div class="absolute inset-0 bg-brutal-black opacity-20"></div>
+    
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+      <div class="brutal-animate">
+        <img
+          src="https://res.cloudinary.com/ddmutduxp/image/upload/v1760453083/FondoSalaAlone_gqrrzp.webp"
+          alt="Baby Fútbol Sala"
+          class="block mx-auto h-auto object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      
+      <div class="bg-brutal-red text-brutal-white px-6 py-4 border-4 border-brutal-black shadow-brutal-lg mb-8 inline-block">
+        <h2 class="font-brutal text-xl sm:text-2xl lg:text-3xl uppercase">
+          Sur Occidente de Colombia
+        </h2>
+        <p class="font-mono text-sm sm:text-base">
+          Tangua, Nariño • 30 Sept - 5 Oct 2025
+        </p>
+      </div>
+      
+      <div class="bg-brutal-yellow text-brutal-black px-4 py-2 border-4 border-brutal-black shadow-brutal mb-8 inline-block">
+        <p class="font-brutal text-sm sm:text-base uppercase">
+          🏆 Clasificatorio Final Internacional Bello - Antioquia 2026
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <BrutalButton href="/final" variant="danger" size="lg">
+          VER RESULTADOS FINALES
+        </BrutalButton>
+        <BrutalButton href="/cronicas" variant="secondary" size="lg">
+          LEER CRÓNICAS
+        </BrutalButton>
+      </div>
+    </div>
+    
+    <!-- Floating elements -->
+    <div class="absolute top-20 left-10 bg-brutal-yellow border-4 border-brutal-black p-4 shadow-brutal rotate-12 hidden lg:block">
+      <p class="font-brutal text-brutal-black">12 EQUIPOS</p>
+    </div>
+    <div class="absolute bottom-20 right-10 bg-brutal-green border-4 border-brutal-black p-4 shadow-brutal -rotate-12 hidden lg:block">
+      <p class="font-brutal text-brutal-white">6 FECHAS</p>
+    </div>
+  </section>
+
+  <!-- Resultados Finales Section -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 bg-brutal-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-brutal text-4xl sm:text-6xl text-brutal-black mb-4 uppercase">
+          🏆 RESULTADOS <span class="text-brutal-red">FINALES</span>
+        </h2>
+        <div class="bg-brutal-black text-brutal-yellow px-6 py-2 border-4 border-brutal-yellow shadow-brutal inline-block">
+          <p class="font-brutal text-xl text-brutal-white">
+            DOMINGO 5 DE OCTUBRE • COLISEO MUNICIPAL DE TANGUA
+          </p>
+        </div>
+      </div>
+
+      <!-- Podio -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+        <!-- Campeón -->
+        <BrutalCard variant="primary" class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-red text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              🥇 1° LUGAR
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.campeon.foto} 
+            alt="Campeón" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          />
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.campeon.equipo}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray">
+            Destacado: {resultadosFinales.campeon.jugador_destacado}
+          </p>
+        </BrutalCard>
+
+        <!-- Subcampeón -->
+        <BrutalCard variant="secondary" class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-gray text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              🥈 2° LUGAR
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.subcampeon.foto} 
+            alt="Subcampeón" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          />
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.subcampeon.equipo}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray">
+            Destacado: {resultadosFinales.subcampeon.jugador_destacado}
+          </p>
+        </BrutalCard>
+
+        <!-- Tercer Lugar -->
+        <BrutalCard variant="danger" class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-purple text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              🥉 3° LUGAR
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.tercer_lugar.foto} 
+            alt="Tercer Lugar" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          />
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.tercer_lugar.equipo}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray">
+            Destacado: {resultadosFinales.tercer_lugar.jugador_destacado}
+          </p>
+        </BrutalCard>
+
+        <!-- Cuarto Lugar -->
+        <BrutalCard class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-blue text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              4° LUGAR
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.cuarto_lugar.foto} 
+            alt="Cuarto Lugar" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          />
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.cuarto_lugar.equipo}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray">
+            Destacado: {resultadosFinales.cuarto_lugar.jugador_destacado}
+          </p>
+        </BrutalCard>
+      </div>
+
+      <!-- Premios Individuales -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Goleador -->
+        <BrutalCard variant="primary" class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-red text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              ⚽ GOLEADOR
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.goleador.foto} 
+            alt="Goleador del torneo" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          >
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.goleador.nombre}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray mb-2">
+            {resultadosFinales.goleador.equipo}
+          </p>
+          <div class="bg-brutal-red text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-3xl">
+            {resultadosFinales.goleador.goles} GOLES
+          </div>
+        </BrutalCard>
+
+        <!-- Valla Menos Vencida -->
+        <BrutalCard variant="secondary" class="text-center">
+          <div class="mb-4">
+            <span class="bg-brutal-gray text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+              🥅 VALLA MENOS VENCIDA
+            </span>
+          </div>
+          <img 
+            src={resultadosFinales.valla_menos_vencida.foto} 
+            alt="Valla menos vencida" 
+            class="w-full h-96 object-cover border-4 border-brutal-black mb-4"
+          />
+          <h3 class="font-brutal text-xl text-brutal-black mb-2">
+            {resultadosFinales.valla_menos_vencida.nombre}
+          </h3>
+          <p class="font-mono text-sm text-brutal-gray mb-2">
+            {resultadosFinales.valla_menos_vencida.equipo}
+          </p>
+          <div class="bg-brutal-gray text-brutal-white px-4 py-2 border-4 border-brutal-black font-brutal text-3xl">
+            {resultadosFinales.valla_menos_vencida.goles_recibidos} GOLES EN CONTRA
+          </div>
+        </BrutalCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Gallery images={heroImages} title="Galería del Torneo" />
+    </div>
+  </section>
+
+  <!-- Navigation Section -->
+  <section class="py-16 bg-brutal-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-brutal text-4xl sm:text-6xl text-brutal-white mb-4 uppercase">
+          NAVEGACIÓN DEL <span class="text-brutal-yellow">TORNEO</span>
+        </h2>
+        <p class="text-brutal-white text-lg">
+          Explora todas las fases del campeonato
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <BrutalButton href="/fecha-1" variant="primary" size="lg" class="w-full justify-center py-6">
+          FECHA 1<br><span class="text-sm">Jornada Inaugural</span>
+        </BrutalButton>
+        <BrutalButton href="/fecha-2" variant="primary" size="lg" class="w-full justify-center py-6">
+          FECHA 2<br><span class="text-sm">Segunda Jornada</span>
+        </BrutalButton>
+        <BrutalButton href="/fecha-3" variant="primary" size="lg" class="w-full justify-center py-6">
+          FECHA 3<br><span class="text-sm">Jornada Final</span>
+        </BrutalButton>
+        <BrutalButton href="/cuartos" variant="success" size="lg" class="w-full justify-center py-6">
+          CUARTOS<br><span class="text-sm">Cuartos de Final</span>
+        </BrutalButton>
+        <BrutalButton href="/semifinal" variant="success" size="lg" class="w-full justify-center py-6">
+          SEMIFINAL<br><span class="text-sm">Semifinales</span>
+        </BrutalButton>
+        <BrutalButton href="/final" variant="danger" size="lg" class="w-full justify-center py-6">
+          FINAL<br><span class="text-sm">Final y Premiación</span>
+        </BrutalButton>
+        <BrutalButton href="/cronicas" variant="secondary" size="lg" class="w-full justify-center py-6">
+          CRÓNICAS<br><span class="text-sm">Relatos del Torneo</span>
+        </BrutalButton>
+        <BrutalButton href="/cronicas" variant="secondary" size="lg" class="w-full justify-center py-6">
+          AGRADECIMIENTOS<br><span class="text-sm">Organizadores</span>
+        </BrutalButton>
+      </div>
+    </div>
+  </section>
+</Layout>

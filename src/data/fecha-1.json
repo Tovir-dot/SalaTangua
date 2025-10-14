@@ -1,0 +1,54 @@
+{
+  "titulo": "Fecha 1 - Jornada Inaugural", 
+  "fecha": "2025-09-30",
+  "lugar": "Coliseo Municipal de Tangua",
+  "partidos": [
+    {
+      "hora": "14:00",
+      "equipo_local": "Semilleros Estrellas Cumbal",
+      "equipo_visitante": "Elyon F.C. Pasto",
+      "resultado_local": 3,
+      "resultado_visitante": 4,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "15:00", 
+      "equipo_local": "Cracks Futsalon Pasto",
+      "equipo_visitante": "Cordillera F.C. Pasto",
+      "resultado_local": 4,
+      "resultado_visitante": 5,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "16:00",
+      "equipo_local": "Tangua Futsal",
+      "equipo_visitante": "Club Deportivo Bellavista", 
+      "resultado_local": 6,
+      "resultado_visitante": 1,
+      "estado": "finalizado"
+    }
+  ],
+  "goleadores": [
+    {
+      "nombre": "Samuel Santiago Sanchez Rubio",
+      "equipo": "Elyon F.C. Pasto", 
+      "goles": 3
+    },
+    {
+      "nombre": "Santiago Timana Diaz",
+      "equipo": "Tangua Futsal",
+      "goles": 3
+    },
+    {
+      "nombre": "Matias Guerrero Vargas", 
+      "equipo": "Cordillera F.C. Pasto",
+      "goles": 2
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

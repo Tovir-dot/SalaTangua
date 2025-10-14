@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+import BrutalButton from '../components/BrutalButton.astro';
+
+// Importar datos
+import cronicasData from '../data/cronicas.json';
+---
+
+<Layout title="Agradecimientos | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-green to-brutal-blue py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-brutal text-4xl sm:text-6xl lg:text-7xl text-brutal-white mb-4">
+        🙏Agradecimientos
+      </h1>
+    </div>
+  </section>
+
+  <!-- Agradecimientos Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+
+
+      <!-- Agradecimientos Section -->
+      <BrutalCard variant="success" class="mb-8">
+       
+        <!-- Organizadores -->
+        <div class="mb-8">
+          <h3 class="font-brutal text-2xl text-brutal-black mb-6 uppercase">
+            👥 Organizadores y Autoridades
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {cronicasData.agradecimientos.organizadores.map((organizador) => (
+              <div class="bg-brutal-white text-brutal-black p-6 border-4 border-brutal-black">
+                <h4 class="font-brutal text-xl mb-2">{organizador.nombre}</h4>
+                <p class="font-mono text-sm text-brutal-red mb-3">{organizador.cargo}</p>
+                <p class="text-sm leading-relaxed">{organizador.mensaje}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Colaboradores -->
+        <div>
+          <h3 class="font-brutal text-2xl text-brutal-black mb-6 uppercase">
+            🤝 Colaboradores
+          </h3>
+          <div class="bg-brutal-black text-brutal-white p-6 border-4 border-brutal-yellow">
+            <p class="font-brutal text-lg mb-4 text-brutal-yellow">
+              Agradecemos especialmente a todas las instituciones que hicieron posible este torneo:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {cronicasData.agradecimientos.patrocinadores.map((patrocinador) => (
+                <div class="bg-brutal-yellow text-brutal-black px-4 py-3 border-4 border-brutal-white text-center">
+                  <span class="font-brutal text-sm uppercase">{patrocinador}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Mensaje Final -->
+      <BrutalCard variant="danger" class="text-center">
+        <h3 class="font-brutal text-3xl text-brutal-white mb-6 uppercase">
+          🏆 Mensaje Final
+        </h3>
+        <div class="text-brutal-white leading-relaxed space-y-4">
+          <p class="text-lg">
+            El <strong>Baby Fútbol Sala Sur Occidente de Colombia - Tangua 2025</strong> ha sido 
+            mucho más que un torneo deportivo. Ha sido una celebración del talento juvenil, 
+            la pasión por el fútbol sala y el compromiso de toda una comunidad.
+          </p>
+          <p class="text-lg">
+            Durante 6 días intensos, 12 equipos demostraron que el futuro del fútbol sala 
+            colombiano está en excelentes manos. Cada partido, cada gol y cada momento 
+            de juego limpio contribuyó a crear una experiencia inolvidable.
+          </p>
+          <p class="text-lg">
+            <strong>Reto 365 Pasto</strong> se consagró como el gran campeón, pero todos 
+            los participantes son ganadores por haber formado parte de esta gran fiesta 
+            del deporte formativo en Nariño.
+          </p>
+        </div>
+        
+        <div class="mt-8 bg-brutal-black text-brutal-yellow px-8 py-6 border-4 border-brutal-yellow">
+          <h4 class="font-brutal text-2xl mb-4">
+            ¡HASTA LA FINAL INTERNACIONAL EN BELLO - ANTIOQUIA 2026!
+          </h4>
+          <p class="font-mono text-lg">
+            El sueño continúa para Reto 365 Pasto...
+          </p>
+        </div>
+      </BrutalCard>
+
+      <!-- Enlaces de Navegación -->
+      <div class="mt-12 text-center">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-6 uppercase">
+          Explora Más del Torneo
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <BrutalButton href="/" variant="primary">
+            INICIO
+          </BrutalButton>
+          <BrutalButton href="/final" variant="danger">
+            VER FINAL
+          </BrutalButton>
+          <BrutalButton href="/semifinal" variant="success">
+            SEMIFINAL
+          </BrutalButton>
+          <BrutalButton href="/cuartos" variant="secondary">
+            CUARTOS
+          </BrutalButton>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

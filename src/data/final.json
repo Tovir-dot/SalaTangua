@@ -1,0 +1,56 @@
+{
+  "titulo": "Final y Premiación",
+  "fecha": "2025-10-05",
+  "lugar": "Coliseo Municipal de Tangua",
+  "partidos": [
+    {
+      "hora": "10:00",
+      "equipo_local": "Elyon F.C. Pasto",
+      "equipo_visitante": "Tangua Futsal",
+      "resultado_local": 5,
+      "resultado_visitante": 4,
+      "estado": "finalizado",
+      "tipo": "Tercer Lugar"
+    },
+    {
+      "hora": "11:30", 
+      "equipo_local": "Reto 365 Pasto",
+      "equipo_visitante": "Cordillera F.C. Pasto",
+      "resultado_local": 9,
+      "resultado_visitante": 4,
+      "estado": "finalizado",
+      "tipo": "Final"
+    }
+  ],
+  "premiacion": {
+    "campeon": "Reto 365 Pasto",
+    "subcampeon": "Cordillera F.C. Pasto",
+    "tercer_lugar": "Tangua Futsal",
+    "cuarto_lugar": "Elyon F.C. Pasto"
+  },
+  "goleadores": [
+    {
+      "nombre": "Jhon Burbano Martinez",
+      "equipo": "Reto 365 Pasto", 
+      "goles": 14
+    },
+    {
+      "nombre": "Santiago Timana Diaz",
+      "equipo": "Tangua Futsal",
+      "goles": 10
+    },
+    {
+      "nombre": "Johan Rosero Riascos",
+      "equipo": "Reto 365 Pasto",
+      "goles": 9
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "fecha": "2025-10-05",
+  "lugar": "Coliseo Municipal de Tangua",
+  "campeon": {
+    "posicion": 1,
+    "equipo": "Reto 365 Pasto",
+    "codigo": "3C",
+    "jugador_destacado": "Jhon Burbano Martinez",
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760456033/Campeon_jgyufu.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  },
+  "subcampeon": {
+    "posicion": 2, 
+    "equipo": "Cordillera F.C. Pasto",
+    "codigo": "2B",
+    "jugador_destacado": "Matias Guerrero Vargas",
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760454049/Imagen2_zezd1z.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  },
+  "tercer_lugar": {
+    "posicion": 3,
+    "equipo": "Tangua Fútbol Club",
+    "codigo": "1A", 
+    "jugador_destacado": "Santiago Timana Diaz",
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760454121/Imagen3_cgk7cv.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  },
+  "cuarto_lugar": {
+    "posicion": 4,
+    "equipo": "Elyon F.C.",
+    "codigo": "4A",
+    "jugador_destacado": "Mathias Joel Martinez Arteaga", 
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760455561/Captura_de_pantalla_2025-10-10_085435_gzheqm.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  },
+  "goleador": {
+    "nombre": "Jhon Burbano Martinez",
+    "equipo": "Reto 365 Pasto",
+    "goles": 14,
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760455809/Goleador_swqqes.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  },
+  "valla_menos_vencida": {
+    "nombre": "Weider Miramag y Jair Rosas",
+    "equipo": "Reto 365 Pasto", 
+    "goles_recibidos": 9,
+    "foto": "https://res.cloudinary.com/ddmutduxp/image/upload/v1760453898/Imagen1_sjs1nj.webp?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+  }
+}

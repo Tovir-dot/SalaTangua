@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResultTable from '../components/ResultTable.astro';
+import GoalScorersTable from '../components/GoalScorersTable.astro';
+import Gallery from '../components/Gallery.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+
+// Importar datos
+import semifinalData from '../data/semifinal.json';
+---
+
+<Layout title="Semifinal | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-purple to-brutal-red py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-brutal text-4xl sm:text-6xl lg:text-7xl text-brutal-white mb-4">
+        SEMIFINAL
+      </h1>
+      <div class="bg-brutal-white text-brutal-black px-6 py-4 border-4 border-brutal-black shadow-brutal-lg inline-block">
+        <h2 class="font-brutal text-xl sm:text-2xl uppercase">
+          {semifinalData.titulo}
+        </h2>
+        <p class="font-mono text-sm sm:text-base">
+          {semifinalData.fecha} • {semifinalData.lugar}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Descripción -->
+      <BrutalCard variant="danger" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-white mb-4 uppercase">
+          🔥 Rumbo a la Gran Final
+        </h3>
+        <p class="text-brutal-white leading-relaxed mb-4">
+          La tarde del <strong>4 de octubre de 2025</strong> se vivieron las semifinales más emocionantes en la historia 
+          del torneo. El Coliseo Municipal de Tangua fue testigo de dos encuentros que quedaron grabados 
+          en la memoria de todos los asistentes.
+        </p>
+        <p class="text-brutal-white leading-relaxed">
+          <strong>Reto 365</strong> confirmó su favoritismo con una actuación demoledora, mientras que 
+          <strong>Cordillera F.C.</strong> dio la gran sorpresa del torneo al eliminar al equipo local 
+          en un partido que será recordado por generaciones.
+        </p>
+      </BrutalCard>
+
+      <!-- Tabla de Resultados -->
+      <ResultTable 
+        partidos={semifinalData.partidos} 
+        title="Resultados Semifinal" 
+      />
+
+      <!-- Finalistas -->
+      <BrutalCard variant="success" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-white mb-6 uppercase">
+          🏆 Finalistas del Torneo
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-brutal-yellow text-brutal-black p-8 border-4 border-brutal-black text-center shadow-brutal-lg">
+            <h4 class="font-brutal text-3xl mb-4">RETO 365 PASTO</h4>
+            <div class="bg-brutal-red text-brutal-white px-4 py-2 border-4 border-brutal-black mb-4">
+              <span class="font-brutal text-xl">GOLEÓ 10-2</span>
+            </div>
+            <p class="font-mono text-sm mb-4">
+              Eliminó a Elyon F.C. Pasto con una actuación histórica que dejó sin palabras a los asistentes.
+            </p>
+            <div class="bg-brutal-green text-brutal-white px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-lg">FINALISTA</span>
+            </div>
+          </div>
+          
+          <div class="bg-brutal-blue text-brutal-white p-8 border-4 border-brutal-black text-center shadow-brutal-lg">
+            <h4 class="font-brutal text-3xl mb-4">CORDILLERA F.C.</h4>
+            <div class="bg-brutal-red text-brutal-white px-4 py-2 border-4 border-brutal-black mb-4">
+              <span class="font-brutal text-xl">VENCIÓ 6-2</span>
+            </div>
+            <p class="font-mono text-sm mb-4">
+              Dio la sorpresa eliminando a Tangua Futsal en su propio territorio con una actuación magistral.
+            </p>
+            <div class="bg-brutal-green text-brutal-white px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-lg">FINALISTA</span>
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Goleadores -->
+      <GoalScorersTable 
+        goleadores={semifinalData.goleadores}
+        title="Goleadores Acumulados - Hasta Semifinal"
+      />
+
+      <!-- Análisis de los Partidos -->
+      <BrutalCard variant="primary" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          ⚽ Crónica de los Encuentros Semifinales
+        </h3>
+        
+        <!-- Primer Partido -->
+        <div class="mb-6 p-4 border-4 border-brutal-black bg-brutal-yellow">
+          <h4 class="font-brutal text-xl text-brutal-black mb-3">
+            🔥 RETO 365 10-2 ELYON F.C. (16:00)
+          </h4>
+          <p class="text-brutal-black mb-3 leading-relaxed">
+            Desde el pitazo inicial, <strong>Reto 365</strong> mostró un ritmo arrollador que dejó sin respuesta 
+            a Elyon F.C. La diferencia técnica y física fue evidente, con Jhon Burbano Martinez brillando 
+            nuevamente como figura del encuentro.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-brutal-red text-brutal-white p-3 border-2 border-brutal-black text-center">
+              <strong>PRIMER TIEMPO</strong><br>6-1
+            </div>
+            <div class="bg-brutal-green text-brutal-white p-3 border-2 border-brutal-black text-center">
+              <strong>SEGUNDO TIEMPO</strong><br>4-1
+            </div>
+            <div class="bg-brutal-blue text-brutal-white p-3 border-2 border-brutal-black text-center">
+              <strong>GOLEADOR</strong><br>J. Burbano (4 goles)
+            </div>
+          </div>
+        </div>
+
+        <!-- Segundo Partido -->
+        <div class="p-4 border-4 border-brutal-black bg-brutal-green text-brutal-white">
+          <h4 class="font-brutal text-xl mb-3">
+            💚 TANGUA FUTSAL 2-6 CORDILLERA F.C. (17:00)
+          </h4>
+          <p class="mb-3 leading-relaxed">
+            La gran sorpresa de las semifinales llegó de la mano de <strong>Cordillera F.C.</strong>, que 
+            demostró solidez táctica y efectividad para silenciar al Coliseo Municipal ante un Tangua Futsal 
+            que no pudo con la presión del momento decisivo.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-brutal-yellow text-brutal-black p-3 border-2 border-brutal-black text-center">
+              <strong>PRIMER TIEMPO</strong><br>1-3
+            </div>
+            <div class="bg-brutal-red text-brutal-white p-3 border-2 border-brutal-black text-center">
+              <strong>SEGUNDO TIEMPO</strong><br>1-3
+            </div>
+            <div class="bg-brutal-purple text-brutal-white p-3 border-2 border-brutal-black text-center">
+              <strong>FIGURA</strong><br>M. Guerrero (3 goles)
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Estadísticas de Semifinal -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <BrutalCard variant="danger" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">18</h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">Goles Totales</p>
+          <p class="font-mono text-xs text-brutal-white">En ambos partidos</p>
+        </BrutalCard>
+        
+        <BrutalCard variant="success" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">10</h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">Máxima Goleada</p>
+          <p class="font-mono text-xs text-brutal-white">Reto 365 vs Elyon</p>
+        </BrutalCard>
+        
+        <BrutalCard variant="primary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-black mb-2">2</h4>
+          <p class="font-brutal text-lg text-brutal-black uppercase">Sorpresas</p>
+          <p class="font-mono text-xs text-brutal-black">Eliminaciones inesperadas</p>
+        </BrutalCard>
+
+        <BrutalCard variant="secondary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">12</h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">Goles J. Burbano</p>
+          <p class="font-mono text-xs text-brutal-white">Líder goleador</p>
+        </BrutalCard>
+      </div>
+
+      <!-- Tercer y Cuarto Lugar -->
+      <BrutalCard variant="secondary" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-white mb-4 uppercase">
+          🥉 Partido por el Tercer Lugar
+        </h3>
+        <div class="bg-brutal-black text-brutal-white p-6 border-4 border-brutal-yellow text-center">
+          <h4 class="font-brutal text-2xl mb-4">DOMINGO 5 DE OCTUBRE - 10:00 AM</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div class="text-right">
+              <h5 class="font-brutal text-xl">ELYON F.C. PASTO</h5>
+              <p class="font-mono text-sm">Eliminado en semifinal</p>
+            </div>
+            <div class="font-brutal text-3xl text-brutal-yellow">VS</div>
+            <div class="text-left">
+              <h5 class="font-brutal text-xl">TANGUA FUTSAL</h5>
+              <p class="font-mono text-sm">Equipo local eliminado</p>
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Galería -->
+      <Gallery images={semifinalData.imagenes} title="Galería - Semifinal" />
+      
+    </div>
+  </section>
+</Layout>

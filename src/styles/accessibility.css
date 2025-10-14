@@ -1,0 +1,51 @@
+/* Reglas globales para mejorar contraste, foco y legibilidad */
+:root {
+  --base-font-size: 16px;
+  --base-line-height: 1.5;
+}
+
+html { font-size: var(--base-font-size); }
+body { line-height: var(--base-line-height); }
+
+/* Mejora del foco visible para accesibilidad por teclado */
+:focus {
+  outline: 3px solid #D08900; /* amarillo accesible */
+  outline-offset: 2px;
+}
+
+/* Asegurar que los botones y enlaces tengan contraste suficiente */
+button, a[class], .btn {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Forzar que texto sobre fondos oscuros sea blanco y suficientemente grande */
+.bg-brutal-black, .text-brutal-white {
+  color: #FFFFFF !important;
+}
+
+/* Ajustes para captions y textos secundarios */
+.text-muted, .text-brutal-gray {
+  color: #374151 !important; /* gris oscuro legible */
+}
+
+/* Contraste para elementos con fondo amarillo oscuro */
+.bg-brutal-yellow {
+  background-color: #D08900 !important;
+  color: #000000 !important;
+}
+
+/* Contraste para botones primarios en amarillo */
+.btn-primary, .bg-brutal-yellow.btn {
+  color: #000000 !important;
+}
+
+/* Accesibilidad visual para tarjetas y secciones */
+.card {
+  background-clip: padding-box;
+}
+
+/* Evitar texto demasiado pequeño en dispositivos móviles */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+}

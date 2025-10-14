@@ -1,0 +1,47 @@
+---
+export interface Props {
+  goleadores: Array<{
+    nombre: string;
+    equipo: string;
+    goles: number;
+  }>;
+  title?: string;
+}
+
+const { goleadores, title = "Tabla de Goleadores" } = Astro.props;
+---
+
+<div class="bg-brutal-white border-4 border-brutal-black shadow-brutal mb-8">
+  <div class="bg-brutal-green text-brutal-white p-4 border-b-4 border-brutal-black">
+    <h3 class="font-brutal text-xl uppercase">{title}</h3>
+  </div>
+  
+  <div class="p-4">
+    <div class="overflow-x-auto">
+      <table class="w-full font-mono text-sm">
+        <thead>
+          <tr class="border-b-4 border-brutal-black">
+            <th class="text-left py-2 px-4 font-brutal bg-brutal-yellow">#</th>
+            <th class="text-left py-2 px-4 font-brutal bg-brutal-yellow">JUGADOR</th>
+            <th class="text-left py-2 px-4 font-brutal bg-brutal-yellow">EQUIPO</th>
+            <th class="text-center py-2 px-4 font-brutal bg-brutal-yellow">GOLES</th>
+          </tr>
+        </thead>
+        <tbody>
+          {goleadores.slice(0, 10).map((goleador, index) => (
+            <tr class={`${index % 2 === 0 ? 'bg-brutal-white' : 'bg-gray-50'} border-b-2 border-brutal-black`}>
+              <td class="py-3 px-4 font-brutal text-brutal-red text-lg">#{index + 1}</td>
+              <td class="py-3 px-4 font-semibold">{goleador.nombre}</td>
+              <td class="py-3 px-4 text-sm text-brutal-gray">{goleador.equipo}</td>
+              <td class="py-3 px-4 text-center">
+                <span class="bg-brutal-red text-brutal-white px-3 py-1 border-2 border-brutal-black font-brutal text-lg">
+                  {goleador.goles}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

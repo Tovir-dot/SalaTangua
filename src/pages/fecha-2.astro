@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResultTable from '../components/ResultTable.astro';
+import GoalScorersTable from '../components/GoalScorersTable.astro';
+import Gallery from '../components/Gallery.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+
+// Importar datos
+import fecha2Data from '../data/fecha-2.json';
+---
+
+<Layout title="Fecha 2 - Segunda Jornada | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-blue to-brutal-purple py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-brutal text-4xl sm:text-6xl lg:text-7xl text-brutal-white mb-4">
+        FECHA 2
+      </h1>
+      <div class="bg-brutal-white text-brutal-black px-6 py-4 border-4 border-brutal-black shadow-brutal-lg inline-block">
+        <h2 class="font-brutal text-xl sm:text-2xl uppercase">
+          {fecha2Data.titulo}
+        </h2>
+        <p class="font-mono text-sm sm:text-base">
+          {fecha2Data.fecha} • {fecha2Data.lugar}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Descripción -->
+      <BrutalCard variant="primary" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          🔥 Segunda Jornada de Récords
+        </h3>
+        <p class="text-brutal-black leading-relaxed mb-4">
+          La segunda fecha del torneo, disputada el <strong>2 de octubre de 2025</strong>, será recordada por la 
+          actuación histórica de <strong>Reto 365 Pasto</strong>, que estableció un nuevo récord del torneo 
+          al golear 14-1 a Real Falcón Pasto.
+        </p>
+        <p class="text-brutal-black leading-relaxed">
+          Esta jornada también confirmó el excelente nivel competitivo del campeonato, con encuentros 
+          emocionantes y la consolidación de varios equipos como serios candidatos al título.
+        </p>
+      </BrutalCard>
+
+      <!-- Tabla de Resultados -->
+      <ResultTable 
+        partidos={fecha2Data.partidos} 
+        title="Resultados Fecha 2" 
+      />
+
+      <!-- Goleadores -->
+      <GoalScorersTable 
+        goleadores={fecha2Data.goleadores}
+        title="Goleadores Destacados - Fecha 2"
+      />
+
+      <!-- Récord Histórico -->
+      <BrutalCard variant="danger" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-white mb-4 uppercase">
+          📈 RÉCORD HISTÓRICO DEL TORNEO
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-brutal-yellow text-brutal-black p-6 border-4 border-brutal-black shadow-brutal">
+            <h4 class="font-brutal text-3xl mb-2">14 - 1</h4>
+            <p class="font-brutal text-lg mb-2">RETO 365 vs REAL FALCÓN</p>
+            <p class="font-mono text-sm">
+              La goleada más amplia registrada en la historia del torneo Baby Fútbol Sala Sur Occidente de Colombia.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-brutal-green text-brutal-white p-4 border-4 border-brutal-black">
+              <p class="font-brutal text-lg">🥅 5 GOLES</p>
+              <p class="font-mono text-sm">Jhon Burbano Martinez (Reto 365)</p>
+            </div>
+            <div class="bg-brutal-blue text-brutal-white p-4 border-4 border-brutal-black">
+              <p class="font-brutal text-lg">⚽ HAT-TRICK</p>
+              <p class="font-mono text-sm">Santiago Timana Diaz (Tangua Futsal)</p>
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Estadísticas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <BrutalCard variant="secondary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">
+            {fecha2Data.partidos.length}
+          </h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">
+            Partidos Jugados
+          </p>
+        </BrutalCard>
+        
+        <BrutalCard variant="primary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-black mb-2">
+            {fecha2Data.partidos.reduce((total, partido) => 
+              total + partido.resultado_local + partido.resultado_visitante, 0
+            )}
+          </h4>
+          <p class="font-brutal text-lg text-brutal-black uppercase">
+            Goles Totales
+          </p>
+        </BrutalCard>
+        
+        <BrutalCard variant="danger" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">
+            14
+          </h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">
+            Goles en un Partido
+          </p>
+        </BrutalCard>
+      </div>
+
+      <!-- Análisis Táctico -->
+      <BrutalCard class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          🎯 Análisis de la Jornada
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-brutal text-lg text-brutal-red mb-3">EQUIPOS EN ASCENSO</h4>
+            <ul class="space-y-2 font-mono text-sm">
+              <li>• <strong>Reto 365 Pasto:</strong> Demostró su potencial ofensivo con una actuación histórica</li>
+              <li>• <strong>Cracks Futsalon Pasto:</strong> Sólida victoria 6-1 que confirma sus aspiraciones</li>
+              <li>• <strong>Semilleros Estrellas Cumbal:</strong> Victoria convincente 5-1 ante Bellavista</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-brutal text-lg text-brutal-red mb-3">FIGURAS DESTACADAS</h4>
+            <ul class="space-y-2 font-mono text-sm">
+              <li>• <strong>Jhon Burbano Martinez:</strong> 5 goles en un solo partido</li>
+              <li>• <strong>Santiago Timana Diaz:</strong> Mantiene su racha goleadora con 3 tantos</li>
+              <li>• <strong>Aaron Sebastian Rico Ruano:</strong> Hat-trick que ilusiona a la afición</li>
+            </ul>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Galería -->
+      <Gallery images={fecha2Data.imagenes} title="Galería - Fecha 2" />
+      
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,35 @@
+{
+    "agradecimientos": {
+    "organizadores": [
+      {
+        "nombre": "Dr. Marino Timaná",
+        "cargo": "Alcalde de Tangua",
+        "mensaje": "Gracias por su liderazgo y apoyo incondicional al deporte formativo en nuestro municipio."
+      },
+      {
+        "nombre": "Dr. Jairo Timaná", 
+        "cargo": "Gestor Social",
+        "mensaje": "Por su compromiso con la juventud y el desarrollo social a través del deporte."
+      },
+      {
+        "nombre": "Lic. Francisco Montaño",
+        "cargo": "Director Oficina de Cultura y Deportes", 
+        "mensaje": "Por hacer posible este gran evento deportivo y cultural en Tangua."
+      },
+      {
+        "nombre": "Oscar Armando Bolaños Castro",
+        "cargo": "Coordinador Zonal Baby Fútbol",
+        "mensaje": "Por su excelente organización y coordinación del torneo."
+      }
+    ],
+    "patrocinadores": [
+      "Festival de Festivales",
+      "Los Paisitas",
+      "Liga de Fútbol de Nariño", 
+      "Alianza Sureña",
+      "OSBOL Sport Marketing",
+      "Fortaleza",
+      "AVAL Corporación Social y Deportiva"
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResultTable from '../components/ResultTable.astro';
+import GoalScorersTable from '../components/GoalScorersTable.astro';
+import Gallery from '../components/Gallery.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+
+// Importar datos
+import fecha1Data from '../data/fecha-1.json';
+---
+
+<Layout title="Fecha 1 - Jornada Inaugural | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-yellow to-brutal-red py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-brutal text-4xl sm:text-6xl lg:text-7xl text-brutal-black mb-4">
+        FECHA 1
+      </h1>
+      <div class="bg-brutal-black text-brutal-white px-6 py-4 border-4 border-brutal-white shadow-brutal-lg inline-block">
+        <h2 class="font-brutal text-xl sm:text-2xl uppercase">
+          {fecha1Data.titulo}
+        </h2>
+        <p class="font-mono text-sm sm:text-base">
+          {fecha1Data.fecha} • {fecha1Data.lugar}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Descripción -->
+      <BrutalCard class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          🚀 Jornada Inaugural Espectacular
+        </h3>
+        <p class="text-brutal-gray leading-relaxed mb-4">
+          El <strong>30 de septiembre de 2025</strong> se dio inicio oficial al torneo Baby Fútbol Sala Sur Occidente de Colombia 
+          en el Coliseo Municipal de Tangua. La primera fecha estuvo cargada de emociones, goles y grandes actuaciones 
+          que marcaron el tono para todo el campeonato.
+        </p>
+        <p class="text-brutal-gray leading-relaxed">
+          Con la participación de 12 equipos divididos en 3 grupos, la jornada inaugural mostró el alto nivel competitivo 
+          y la pasión de los jóvenes futbolistas por representar a sus instituciones en este importante torneo clasificatorio.
+        </p>
+      </BrutalCard>
+
+      <!-- Tabla de Resultados -->
+      <ResultTable 
+        partidos={fecha1Data.partidos} 
+        title="Resultados Fecha 1" 
+      />
+
+      <!-- Goleadores -->
+      <GoalScorersTable 
+        goleadores={fecha1Data.goleadores}
+        title="Goleadores Destacados - Fecha 1"
+      />
+
+      <!-- Estadísticas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <BrutalCard variant="primary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-black mb-2">
+            {fecha1Data.partidos.length}
+          </h4>
+          <p class="font-brutal text-lg text-brutal-black uppercase">
+            Partidos Jugados
+          </p>
+        </BrutalCard>
+        
+        <BrutalCard variant="secondary" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">
+            {fecha1Data.partidos.reduce((total, partido) => 
+              total + partido.resultado_local + partido.resultado_visitante, 0
+            )}
+          </h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">
+            Goles Totales
+          </p>
+        </BrutalCard>
+        
+        <BrutalCard variant="danger" class="text-center">
+          <h4 class="font-brutal text-3xl text-brutal-white mb-2">
+            {Math.max(...fecha1Data.goleadores.map(g => g.goles))}
+          </h4>
+          <p class="font-brutal text-lg text-brutal-white uppercase">
+            Máximo Goleador
+          </p>
+        </BrutalCard>
+      </div>
+
+      <!-- Momentos Destacados -->
+      <BrutalCard variant="default" class="mb-8">
+        <h3 class="font-brutal text-2xl text-brutal-black mb-4 uppercase">
+          ⭐ Momentos Destacados
+        </h3>
+        <div class="text-brutal-black space-y-3">
+          <div class="flex items-start space-x-3">
+            <span class="bg-brutal-yellow text-brutal-black px-2 py-1 border-2 border-brutal-black font-brutal text-sm">
+              16:00
+            </span>
+            <p>
+              <strong>Tangua Futsal</strong> arranca con fuerza venciendo 6-1 a Club Deportivo Bellavista 
+              en el partido estelar de la jornada inaugural.
+            </p>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="bg-brutal-red text-brutal-white px-2 py-1 border-2 border-brutal-black font-brutal text-sm">
+              GOLES
+            </span>
+            <p>
+              <strong>Santiago Timana Diaz</strong> y <strong>Samuel Santiago Sanchez Rubio</strong> 
+              se destacan como goleadores con 3 tantos cada uno.
+            </p>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="bg-brutal-purple text-brutal-white px-2 py-1 border-2 border-brutal-black font-brutal text-sm">
+              DEBUT
+            </span>
+            <p>
+              Excelente debut de <strong>Cordillera F.C. Pasto</strong> que logra remontar y ganar 5-4 
+              en un emocionante encuentro ante Cracks Futsalon Pasto.
+            </p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Galería -->
+      <Gallery images={fecha1Data.imagenes} title="Galería - Fecha 1" />
+      
+    </div>
+  </section>
+</Layout>

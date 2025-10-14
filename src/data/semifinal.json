@@ -1,0 +1,46 @@
+{
+  "titulo": "Semifinal",
+  "fecha": "2025-10-04",
+  "lugar": "Coliseo Municipal de Tangua", 
+  "partidos": [
+    {
+      "hora": "16:00",
+      "equipo_local": "Reto 365 Pasto",
+      "equipo_visitante": "Elyon F.C. Pasto",
+      "resultado_local": 10,
+      "resultado_visitante": 2,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "17:00",
+      "equipo_local": "Tangua Futsal",
+      "equipo_visitante": "Cordillera F.C. Pasto", 
+      "resultado_local": 2,
+      "resultado_visitante": 6,
+      "estado": "finalizado"
+    }
+  ],
+  "goleadores": [
+    {
+      "nombre": "Jhon Burbano Martinez",
+      "equipo": "Reto 365 Pasto",
+      "goles": 12
+    },
+    {
+      "nombre": "Santiago Timana Diaz",
+      "equipo": "Tangua Futsal",
+      "goles": 10
+    },
+    {
+      "nombre": "Johan Rosero Riascos", 
+      "equipo": "Reto 365 Pasto",
+      "goles": 9
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

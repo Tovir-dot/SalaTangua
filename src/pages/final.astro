@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResultTable from '../components/ResultTable.astro';
+import GoalScorersTable from '../components/GoalScorersTable.astro';
+import Gallery from '../components/Gallery.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+
+// Importar datos
+import finalData from '../data/final.json';
+---
+
+<Layout title="Final y Premiación | Baby Fútbol Sala Tangua 2025">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brutal-red to-brutal-yellow py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="brutal-animate">
+        <h1 class="font-brutal text-5xl sm:text-7xl lg:text-8xl text-brutal-white mb-6 leading-tight">
+          GRAN FINAL
+        </h1>
+      </div>
+      <div class="bg-brutal-black text-brutal-yellow px-8 py-6 border-4 border-brutal-white shadow-brutal-lg inline-block">
+        <h2 class="font-brutal text-2xl sm:text-3xl uppercase">
+          {finalData.titulo}
+        </h2>
+        <p class="font-mono text-base sm:text-lg">
+          {finalData.fecha} • {finalData.lugar}
+        </p>
+      </div>
+      <div class="mt-8 bg-brutal-green text-brutal-white px-6 py-3 border-4 border-brutal-black shadow-brutal inline-block">
+        <p class="font-brutal text-lg uppercase">
+          🏆 CORONACIÓN DEL CAMPEÓN
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Descripción -->
+      <BrutalCard variant="danger" class="mb-8">
+        <h3 class="font-brutal text-3xl text-brutal-white mb-4 uppercase">
+          👑 El Día de la Gloria
+        </h3>
+        <p class="text-brutal-white leading-relaxed mb-4 text-lg">
+          El <strong>domingo 5 de octubre de 2025</strong> quedará grabado para siempre en la historia del 
+          fútbol sala nariñense. El Coliseo Municipal de Tangua fue el escenario perfecto para coronar 
+          al nuevo campeón del Baby Fútbol Sala Sur Occidente de Colombia.
+        </p>
+        <p class="text-brutal-white leading-relaxed text-lg">
+          Con las gradas repletas de familias y aficionados, se vivió una jornada épica que culminó 
+          con la consagración de <strong>Reto 365 Pasto</strong> como el gran campeón del torneo, 
+          tras vencer en una final memorable a Cordillera F.C. por 9-4.
+        </p>
+      </BrutalCard>
+
+      <!-- Tabla de Resultados -->
+      <ResultTable 
+        partidos={finalData.partidos} 
+        title="Resultados Final y Tercer Lugar" 
+      />
+
+      <!-- Campeón -->
+      <BrutalCard variant="success" class="mb-8">
+        <div class="text-center mb-6">
+          <h3 class="font-brutal text-4xl text-brutal-white mb-4 uppercase">
+            🏆 CAMPEÓN 2025
+          </h3>
+        </div>
+        
+        <div class="bg-brutal-yellow text-brutal-black p-8 border-8 border-brutal-black text-center shadow-brutal-lg">
+          <h4 class="font-brutal text-5xl mb-6">RETO 365 PASTO</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brutal-red text-brutal-white p-4 border-4 border-brutal-black">
+              <h5 class="font-brutal text-2xl mb-2">FINAL</h5>
+              <p class="font-brutal text-3xl">9 - 4</p>
+              <p class="font-mono text-sm mt-2">vs Cordillera F.C.</p>
+            </div>
+            <div class="bg-brutal-green text-brutal-white p-4 border-4 border-brutal-black">
+              <h5 class="font-brutal text-2xl mb-2">TORNEO</h5>
+              <p class="font-brutal text-3xl">57</p>
+              <p class="font-mono text-sm mt-2">Goles Anotados</p>
+            </div>
+            <div class="bg-brutal-blue text-brutal-white p-4 border-4 border-brutal-black">
+              <h5 class="font-brutal text-2xl mb-2">RÉCORD</h5>
+              <p class="font-brutal text-3xl">5-0-0</p>
+              <p class="font-mono text-sm mt-2">Invicto Absoluto</p>
+            </div>
+          </div>
+          <div class="bg-brutal-black text-brutal-yellow px-6 py-4 border-4 border-brutal-red">
+            <p class="font-brutal text-2xl">
+              🎯 CLASIFICADO A BELLO - ANTIOQUIA 2026
+            </p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Podio Final -->
+      <BrutalCard variant="primary" class="mb-8">
+        <h3 class="font-brutal text-3xl text-brutal-black mb-6 uppercase text-center">
+          🥇 Podio Final del Torneo
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 1er Lugar -->
+          <div class="bg-brutal-red text-brutal-white p-6 border-4 border-brutal-black text-center shadow-brutal order-1 lg:order-2">
+            <div class="mb-4">
+              <span class="bg-brutal-yellow text-brutal-black px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+                🥇 1°
+              </span>
+            </div>
+            <h4 class="font-brutal text-xl mb-2">RETO 365 PASTO</h4>
+            <p class="font-mono text-sm mb-4">Campeón Invicto</p>
+            <div class="bg-brutal-yellow text-brutal-black px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-sm">CLASIFICADO BELLO 2026</span>
+            </div>
+          </div>
+
+          <!-- 2do Lugar -->
+          <div class="bg-brutal-gray text-brutal-white p-6 border-4 border-brutal-black text-center shadow-brutal order-2 lg:order-3">
+            <div class="mb-4">
+              <span class="bg-brutal-white text-brutal-black px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+                🥈 2°
+              </span>
+            </div>
+            <h4 class="font-brutal text-xl mb-2">CORDILLERA F.C.</h4>
+            <p class="font-mono text-sm mb-4">Subcampeón</p>
+            <div class="bg-brutal-green text-brutal-white px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-sm">GRAN ACTUACIÓN</span>
+            </div>
+          </div>
+
+          <!-- 3er Lugar -->
+          <div class="bg-brutal-purple text-brutal-white p-6 border-4 border-brutal-black text-center shadow-brutal order-3 lg:order-1">
+            <div class="mb-4">
+              <span class="bg-brutal-yellow text-brutal-black px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+                🥉 3°
+              </span>
+            </div>
+            <h4 class="font-brutal text-xl mb-2">TANGUA FUTSAL</h4>
+            <p class="font-mono text-sm mb-4">Tercer Lugar</p>
+            <div class="bg-brutal-blue text-brutal-white px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-sm">ORGULLO LOCAL</span>
+            </div>
+          </div>
+
+          <!-- 4to Lugar -->
+          <div class="bg-brutal-blue text-brutal-white p-6 border-4 border-brutal-black text-center shadow-brutal order-4">
+            <div class="mb-4">
+              <span class="bg-brutal-white text-brutal-black px-4 py-2 border-4 border-brutal-black font-brutal text-2xl">
+                4°
+              </span>
+            </div>
+            <h4 class="font-brutal text-xl mb-2">ELYON F.C.</h4>
+            <p class="font-mono text-sm mb-4">Cuarto Lugar</p>
+            <div class="bg-brutal-green text-brutal-white px-3 py-2 border-2 border-brutal-black">
+              <span class="font-brutal text-sm">GRAN TORNEO</span>
+            </div>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Premios Individuales -->
+      <BrutalCard variant="secondary" class="mb-8">
+        <h3 class="font-brutal text-3xl text-brutal-white mb-6 uppercase text-center">
+          🏅 Premios Individuales
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Goleador -->
+          <div class="bg-brutal-red text-brutal-white p-6 border-4 border-brutal-black text-center">
+            <div class="mb-4">
+              <span class="bg-brutal-white text-brutal-black px-4 py-3 border-4 border-brutal-black font-brutal text-2xl">
+                ⚽ GOLEADOR
+              </span>
+            </div>
+            <h4 class="font-brutal text-2xl mb-2">JHON BURBANO MARTINEZ</h4>
+            <p class="font-mono text-lg mb-2">Reto 365 Pasto</p>
+            <div class="bg-brutal-yellow text-brutal-black px-4 py-3 border-4 border-brutal-black font-brutal text-4xl">
+              14 GOLES
+            </div>
+            <p class="font-mono text-sm mt-3">
+              Máximo artillero del torneo con actuaciones memorables en cada fecha
+            </p>
+          </div>
+
+          <!-- Valla Menos Vencida -->
+          <div class="bg-brutal-green text-brutal-white p-6 border-4 border-brutal-black text-center">
+            <div class="mb-4">
+              <span class="bg-brutal-white text-brutal-black px-4 py-3 border-4 border-brutal-black font-brutal text-2xl">
+                🥅 VALLA MENOS VENCIDA
+              </span>
+            </div>
+            <h4 class="font-brutal text-2xl mb-2">WEIDER MIRAMAG & JAIR ROSAS</h4>
+            <p class="font-mono text-lg mb-2">Reto 365 Pasto</p>
+            <div class="bg-brutal-yellow text-brutal-black px-4 py-3 border-4 border-brutal-black font-brutal text-4xl">
+              5 GOLES EN CONTRA
+            </div>
+            <p class="font-mono text-sm mt-3">
+              Dupla de arqueros que mantuvo la portería más segura del torneo
+            </p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Goleadores Finales -->
+      <GoalScorersTable 
+        goleadores={finalData.goleadores}
+        title="Tabla Final de Goleadores"
+      />
+
+      <!-- Crónica de la Final -->
+      <BrutalCard variant="danger" class="mb-8">
+        <h3 class="font-brutal text-3xl text-brutal-white mb-4 uppercase">
+          📰 Crónica de la Gran Final
+        </h3>
+        
+        <div class="bg-brutal-black text-brutal-white p-6 border-4 border-brutal-yellow mb-6">
+          <h4 class="font-brutal text-2xl text-brutal-yellow mb-4">
+            🔥 RETO 365 9-4 CORDILLERA F.C. (11:30)
+          </h4>
+          <div class="space-y-4 leading-relaxed">
+            <p>
+              En una final que quedará grabada en la historia del fútbol sala nariñense, 
+              <strong>Reto 365 Pasto</strong> demostró por qué fue el equipo dominante durante todo el torneo. 
+              Desde los primeros minutos, impuso su ritmo de juego y su superioridad técnica.
+            </p>
+            <p>
+              <strong>Cordillera F.C.</strong> intentó resistir el embate inicial, pero la velocidad y precisión 
+              de los ataques del campeón fueron demasiado para sus defensas. A pesar de luchar hasta el final, 
+              no pudieron evitar la consagración del merecido ganador.
+            </p>
+            <p>
+              La actuación de <strong>Jhon Burbano Martinez</strong> fue simplemente espectacular, cerrando 
+              su participación en el torneo con 2 goles más en la final, alcanzando los 14 tantos que 
+              lo coronaron como el indiscutible goleador del campeonato.
+            </p>
+          </div>
+        </div>
+
+        <!-- Estadísticas de la Final -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="bg-brutal-yellow text-brutal-black p-4 border-4 border-brutal-black text-center">
+            <h5 class="font-brutal text-lg mb-2">PRIMER TIEMPO</h5>
+            <p class="font-brutal text-2xl">5-2</p>
+          </div>
+          <div class="bg-brutal-green text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h5 class="font-brutal text-lg mb-2">SEGUNDO TIEMPO</h5>
+            <p class="font-brutal text-2xl">4-2</p>
+          </div>
+          <div class="bg-brutal-blue text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h5 class="font-brutal text-lg mb-2">TOTAL GOLES</h5>
+            <p class="font-brutal text-2xl">13</p>
+          </div>
+          <div class="bg-brutal-purple text-brutal-white p-4 border-4 border-brutal-black text-center">
+            <h5 class="font-brutal text-lg mb-2">ASISTENCIA</h5>
+            <p class="font-brutal text-2xl">500+</p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Mensaje de Clausura -->
+      <BrutalCard variant="success" class="mb-8">
+        <h3 class="font-brutal text-3xl text-brutal-white mb-4 uppercase text-center">
+          🙏 Mensaje de Agradecimiento
+        </h3>
+        <div class="text-brutal-white text-center leading-relaxed">
+          <p class="text-lg mb-4">
+            El <strong>Baby Fútbol Sala Sur Occidente de Colombia - Tangua 2025</strong> ha llegado a su fin, 
+            dejando momentos inolvidables y demostrando el gran nivel del deporte formativo en la región.
+          </p>
+          <p class="text-lg mb-6">
+            Agradecemos profundamente a la <strong>Alcaldía Municipal de Tangua</strong>, al Dr. Marino Timaná, 
+            al Dr. Jairo Timaná, al Lic. Francisco Montaño, y a la <strong>Corporación Deportiva Los Paisitas</strong> 
+            por hacer posible este gran evento deportivo.
+          </p>
+          <div class="bg-brutal-black text-brutal-yellow px-6 py-4 border-4 border-brutal-yellow">
+            <p class="font-brutal text-2xl">
+              ¡NOS VEMOS EN BELLO - ANTIOQUIA 2026!
+            </p>
+          </div>
+        </div>
+      </BrutalCard>
+
+      <!-- Galería -->
+      <Gallery images={finalData.imagenes} title="Galería - Final y Premiación" />
+      
+    </div>
+  </section>
+</Layout>

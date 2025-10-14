@@ -1,0 +1,54 @@
+{
+  "titulo": "Fecha 3 - Jornada Final Grupos",
+  "fecha": "2025-10-03",
+  "lugar": "Coliseo Municipal de Tangua", 
+  "partidos": [
+    {
+      "hora": "13:00",
+      "equipo_local": "Balón de Oro Pasto",
+      "equipo_visitante": "Real Falcón Pasto",
+      "resultado_local": 3,
+      "resultado_visitante": 2,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "14:00",
+      "equipo_local": "JLC Ancuya", 
+      "equipo_visitante": "Cordillera F.C. Pasto",
+      "resultado_local": 2,
+      "resultado_visitante": 7,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "15:00",
+      "equipo_local": "Elyon F.C. Pasto",
+      "equipo_visitante": "Club Deportivo Bellavista",
+      "resultado_local": 11,
+      "resultado_visitante": 1,
+      "estado": "finalizado"
+    }
+  ],
+  "goleadores": [
+    {
+      "nombre": "Zlatan Bastidas Zambrano",
+      "equipo": "Reto 365 Pasto",
+      "goles": 7
+    },
+    {
+      "nombre": "Santiago Timana Diaz",
+      "equipo": "Tangua Futsal", 
+      "goles": 8
+    },
+    {
+      "nombre": "Anthony Calvache Galvis",
+      "equipo": "Cordillera F.C. Pasto",
+      "goles": 5
+    }
+  ],
+  "imagenes": [
+    "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+    "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+  ]
+}

@@ -1,0 +1,63 @@
+---
+import BrutalButton from './BrutalButton.astro';
+---
+
+<nav class="bg-brutal-black border-b-4 border-brutal-yellow shadow-brutal-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="text-brutal-yellow font-brutal text-2xl">
+          BABY FÚTBOL SALA
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-1">
+          <BrutalButton href="/" variant="secondary" size="sm">Inicio</BrutalButton>
+          <BrutalButton href="/fecha-1" variant="primary" size="sm">Fecha 1</BrutalButton>
+          <BrutalButton href="/fecha-2" variant="primary" size="sm">Fecha 2</BrutalButton>
+          <BrutalButton href="/fecha-3" variant="primary" size="sm">Fecha 3</BrutalButton>
+          <BrutalButton href="/cuartos" variant="success" size="sm">Cuartos</BrutalButton>
+          <BrutalButton href="/semifinal" variant="success" size="sm">Semifinal</BrutalButton>
+          <BrutalButton href="/final" variant="danger" size="sm">Final</BrutalButton>
+          <BrutalButton href="/cronicas" variant="secondary" size="sm">Agradecimientos</BrutalButton>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="bg-brutal-yellow border-4 border-brutal-black p-2">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-brutal-black border-t-4 border-brutal-yellow">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block bg-brutal-white border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-black uppercase">Inicio</a>
+      <a href="/fecha-1" class="block bg-brutal-yellow border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-black uppercase">Fecha 1</a>
+      <a href="/fecha-2" class="block bg-brutal-yellow border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-black uppercase">Fecha 2</a>
+      <a href="/fecha-3" class="block bg-brutal-yellow border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-black uppercase">Fecha 3</a>
+      <a href="/cuartos" class="block bg-brutal-green border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-white uppercase">Cuartos</a>
+      <a href="/semifinal" class="block bg-brutal-green border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-white uppercase">Semifinal</a>
+      <a href="/final" class="block bg-brutal-red border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-white uppercase">Final</a>
+      <a href="/cronicas" class="block bg-brutal-white border-4 border-brutal-black px-3 py-2 mb-2 font-brutal text-brutal-black uppercase">Crónicas</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Toggle mobile menu
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

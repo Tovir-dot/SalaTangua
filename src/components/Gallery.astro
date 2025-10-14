@@ -1,0 +1,107 @@
+---
+export interface Props {
+  images: string[];
+  title?: string;
+}
+
+const { images, title = "Galería de Imágenes" } = Astro.props;
+---
+
+<div class="bg-brutal-white border-4 border-brutal-black shadow-brutal mb-8">
+  <div class="bg-brutal-purple text-brutal-white p-4 border-b-4 border-brutal-black">
+    <h3 class="font-brutal text-xl uppercase">{title}</h3>
+  </div>
+  
+  <div class="p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pswp-gallery">
+      {images.map((image, index) => (
+        <a
+          href={image}
+          class="pswp-thumb block border-4 border-brutal-black shadow-brutal-sm hover:shadow-brutal transition-all duration-200 hover:-translate-y-1"
+          data-pswp-width="800"
+          data-pswp-height="600"
+          aria-label={`Ver imagen ${index + 1}`}
+        >
+          <img
+            src={image}
+            alt={`Imagen ${index + 1} del torneo`}
+            class="w-full h-48 object-cover"
+            loading="lazy"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+<script type="module">
+  import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+  // Inicializar PhotoSwipe Lightbox una vez que las imágenes (o sus dimensiones) estén disponibles
+  document.addEventListener('DOMContentLoaded', async () => {
+    const gallerySelector = '.pswp-gallery';
+    const anchors = Array.from(document.querySelectorAll(`${gallerySelector} a`));
+
+    // Intentar calcular dimensiones naturales de cada imagen para que PhotoSwipe muestre controles correctamente
+    await Promise.all(anchors.map(a => new Promise(res => {
+      // Si ya vienen definidas, no es necesario cargar
+      if (a.dataset.pswpWidth && a.dataset.pswpHeight) return res();
+      const img = new Image();
+      img.onload = () => {
+        a.dataset.pswpWidth = img.naturalWidth || 800;
+        a.dataset.pswpHeight = img.naturalHeight || 600;
+        res();
+      };
+      img.onerror = () => {
+        // fallback por si falla la carga
+        a.dataset.pswpWidth = a.dataset.pswpWidth || 800;
+        a.dataset.pswpHeight = a.dataset.pswpHeight || 600;
+        res();
+      };
+      img.src = a.href;
+    })));
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: gallerySelector,
+      children: 'a',
+      showHideAnimationType: 'fade',
+      // pswpModule carga el runtime de PhotoSwipe (ESM) desde CDN
+      pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js')
+    });
+
+    lightbox.init();
+  });
+</script>
+
+<style>
+  /* Forzar visibilidad de los controles en caso de que estilos globales los oculten */
+  :global(.pswp) {
+    --pswp-bg-opacity: 1 !important;
+  }
+
+  :global(.pswp__button) {
+    display: inline-flex !important;
+    opacity: 1 !important;
+  }
+
+  :global(.pswp__button--arrow--left),
+  :global(.pswp__button--arrow--right),
+  :global(.pswp__button--close) {
+    filter: none !important;
+    background: transparent !important;
+  }
+
+  :global(.pswp__bg) {
+    background: rgba(0,0,0,0.9) !important;
+  }
+
+  /* Pequeños ajustes estéticos para el tema 'brutal' */
+  :global(.pswp__caption__center) {
+    font-family: Impact, 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    color: #F59E0B;
+    border-top: 4px solid #000;
+    padding-top: 8px;
+  }
+</style>

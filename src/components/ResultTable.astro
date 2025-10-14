@@ -1,0 +1,65 @@
+---
+export interface Props {
+  partidos: Array<{
+    hora: string;
+    equipo_local: string;
+    equipo_visitante: string;
+    resultado_local: number;
+    resultado_visitante: number;
+    estado: string;
+    penales?: boolean;
+    tipo?: string;
+  }>;
+  title: string;
+}
+
+const { partidos, title } = Astro.props;
+---
+
+<div class="bg-brutal-white border-4 border-brutal-black shadow-brutal mb-8">
+  <div class="bg-brutal-red text-brutal-white p-4 border-b-4 border-brutal-black">
+    <h3 class="font-brutal text-xl uppercase">{title}</h3>
+  </div>
+  
+  <div class="p-4">
+    <div class="overflow-x-auto">
+      <table class="w-full font-mono text-sm">
+        <thead>
+          <tr class="border-b-4 border-brutal-black">
+            <th class="text-left py-2 px-4 font-brutal bg-brutal-yellow">HORA</th>
+            <th class="text-left py-2 px-4 font-brutal bg-brutal-yellow">LOCAL</th>
+            <th class="text-center py-2 px-4 font-brutal bg-brutal-yellow">VS</th>
+            <th class="text-right py-2 px-4 font-brutal bg-brutal-yellow">VISITANTE</th>
+            <th class="text-center py-2 px-4 font-brutal bg-brutal-yellow">RESULTADO</th>
+            {partidos.some(p => p.tipo) && <th class="text-center py-2 px-4 font-brutal bg-brutal-yellow">TIPO</th>}
+          </tr>
+        </thead>
+        <tbody>
+          {partidos.map((partido, index) => (
+            <tr class={`${index % 2 === 0 ? 'bg-brutal-white' : 'bg-gray-50'} border-b-2 border-brutal-black`}>
+              <td class="py-3 px-4 font-bold">{partido.hora}</td>
+              <td class="py-3 px-4">{partido.equipo_local}</td>
+              <td class="py-3 px-4 text-center font-brutal text-brutal-red">VS</td>
+              <td class="py-3 px-4 text-right">{partido.equipo_visitante}</td>
+              <td class="py-3 px-4 text-center">
+                <span class="bg-brutal-green text-brutal-white px-3 py-1 border-2 border-brutal-black font-brutal">
+                  {partido.resultado_local} - {partido.resultado_visitante}
+                  {partido.penales && <span class="text-xs ml-1">(PEN)</span>}
+                </span>
+              </td>
+              {partidos.some(p => p.tipo) && (
+                <td class="py-3 px-4 text-center">
+                  {partido.tipo && (
+                    <span class="bg-brutal-purple text-brutal-white px-2 py-1 border-2 border-brutal-black text-xs font-brutal">
+                      {partido.tipo}
+                    </span>
+                  )}
+                </td>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
