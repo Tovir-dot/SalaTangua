@@ -3,20 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import BrutalCard from '../components/BrutalCard.astro';
 import BrutalButton from '../components/BrutalButton.astro';
 import Gallery from '../components/Gallery.astro';
+import heroImages from '../data/heroImages.json';
+
 
 // Importar datos
 import * as resultadosData from '../data/resultados-finales.json' assert { type: 'json' };
 
 const resultadosFinales: any = resultadosData;
 
-const heroImages = [
-  "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-  "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-  "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-  "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-  "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-  "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
-];
+
 ---
 
 <Layout title="Baby Fútbol Sala Sur Occidente de Colombia - Tangua 2025">
@@ -220,7 +215,7 @@ const heroImages = [
   <!-- Gallery Section -->
   <section class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Gallery images={heroImages} title="Galería del Torneo" />
+      <Gallery images={heroImages.heroImages} title="Jornada Inauguración" />
     </div>
   </section>
 

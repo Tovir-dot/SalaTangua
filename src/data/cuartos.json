@@ -55,9 +55,117 @@
     }
   ],
   "imagenes": [
-    "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-    "https://images.pexels.com/photos/1884576/pexels-photo-1884576.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-    "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-    "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-  ]
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0040_cjzvmv?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0040_cjzvmv?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0040 cjzvmv",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0040_cjzvmv",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0041_o9ttoq?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0041_o9ttoq?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0041 o9ttoq",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0041_o9ttoq",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0042_wmxi7k?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0042_wmxi7k?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0042 wmxi7k",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0042_wmxi7k",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0043_zc0a2y?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0043_zc0a2y?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0043 zc0a2y",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0043_zc0a2y",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0045_vmpqhi?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0045_vmpqhi?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0045 vmpqhi",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0045_vmpqhi",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0046_fqexmy?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0046_fqexmy?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0046 fqexmy",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0046_fqexmy",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0047_ctlxk0?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0047_ctlxk0?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0047 ctlxk0",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0047_ctlxk0",
+          "format": "webp"
+        },
+        {
+          "src": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_1200/Doc2_merged_page-0048_gq2vwu?_a=BAMAK+fm0",
+          "thumbnail": "https://res.cloudinary.com/ddmutduxp/image/upload/c_limit,f_auto,w_400/Doc2_merged_page-0048_gq2vwu?_a=BAMAK+fm0",
+          "alt": "Doc2 merged page 0048 gq2vwu",
+          "caption": "",
+          "width": 2550,
+          "height": 3300,
+          "srcWidth": 1200,
+          "srcHeight": 1553,
+          "thumbnailWidth": 400,
+          "thumbnailHeight": 518,
+          "public_id": "Doc2_merged_page-0048_gq2vwu",
+          "format": "webp"
+        }
+      ]
 }

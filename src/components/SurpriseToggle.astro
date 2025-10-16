@@ -1,0 +1,194 @@
+---
+---
+
+<div id="surprise-toggle" aria-hidden="false"></div>
+
+<style>
+  :root[data-brutal-surprise="on"] {
+    --surprise-enabled: 1;
+  }
+
+  #surprise-toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 9999;
+  }
+
+  .surprise-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    background: #F59E0B;
+    color: #000;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 rgba(0,0,0,1);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .surprise-btn[aria-pressed="true"] {
+    background: #D6392F;
+    color: #fff;
+  }
+
+  /* subtle badge */
+  .surprise-label {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .surprise-label { display: inline-block; margin-left: 8px; font-weight: bold; }
+  }
+
+  /* tilt effect target */
+  :root[data-brutal-surprise="on"] .masonry-item img {
+    transition: transform 180ms ease-out;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root[data-brutal-surprise="on"] .masonry-item img { transition: none; }
+  }
+</style>
+
+<script type="module">
+  // Surprise toggle: confetti + tilt effects. Respects prefers-reduced-motion.
+  const REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setSurprise(enabled) {
+    if (enabled) {
+      document.documentElement.setAttribute('data-brutal-surprise', 'on');
+    } else {
+      document.documentElement.removeAttribute('data-brutal-surprise');
+    }
+    localStorage.setItem('brutal:surprise', enabled ? '1' : '0');
+    const btn = document.querySelector('#surprise-toggle button');
+    if (btn) btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+  }
+
+  function confettiBurst(x = window.innerWidth/2, y = window.innerHeight/2, count = 40) {
+    if (REDUCE) return;
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.left = 0;
+    canvas.style.top = 0;
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = 99999;
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const dpi = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpi;
+    canvas.height = window.innerHeight * dpi;
+    ctx.scale(dpi, dpi);
+
+    const colors = ['#F59E0B','#EF4444','#10B981','#3B82F6','#8B5CF6'];
+    const pieces = [];
+    for (let i=0;i<count;i++) {
+      pieces.push({
+        x, y,
+        vx: (Math.random()-0.5)*10,
+        vy: (Math.random()*-6)-2,
+        rot: Math.random()*360,
+        vr: (Math.random()-0.5)*10,
+        w: 8 + Math.random()*10,
+        h: 6 + Math.random()*8,
+        color: colors[Math.floor(Math.random()*colors.length)],
+        life: 60 + Math.floor(Math.random()*40)
+      });
+    }
+
+    let frame = 0;
+    function render() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for (let p of pieces) {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot * Math.PI/180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+        p.vy += 0.35; // gravity
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.vr;
+        p.life--;
+      }
+      pieces.filter(p => p.life>0);
+      frame++;
+      if (frame < 160) requestAnimationFrame(render);
+      else canvas.remove();
+    }
+    requestAnimationFrame(render);
+  }
+
+  function enableTilt() {
+    if (REDUCE) return;
+    const handler = (e) => {
+      const items = document.querySelectorAll('.masonry-item');
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const img = item.querySelector('img');
+        if (!img) return;
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+        const dx = (e.clientX - cx) / rect.width;
+        const dy = (e.clientY - cy) / rect.height;
+        const rx = dy * 6; // max tilt
+        const ry = dx * -6;
+        img.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+      });
+    };
+    const leave = () => {
+      document.querySelectorAll('.masonry-item img').forEach(img => img.style.transform='');
+    };
+    document.addEventListener('mousemove', handler);
+    document.addEventListener('mouseleave', leave);
+    // store handlers for later removal
+    window.__brutal_tilt_handlers = { handler, leave };
+  }
+
+  function disableTilt() {
+    const h = window.__brutal_tilt_handlers;
+    if (!h) return;
+    document.removeEventListener('mousemove', h.handler);
+    document.removeEventListener('mouseleave', h.leave);
+    window.__brutal_tilt_handlers = null;
+    document.querySelectorAll('.masonry-item img').forEach(img => img.style.transform='');
+  }
+
+  // Listen for gallery open event and trigger confetti if enabled
+  document.addEventListener('gallery:opened', (ev) => {
+    const enabled = localStorage.getItem('brutal:surprise') === '1';
+    if (!enabled) return;
+    const x = ev.detail?.x || window.innerWidth/2;
+    const y = ev.detail?.y || window.innerHeight/3;
+    confettiBurst(x, y, 48);
+  });
+
+  // init DOM button
+  (function init() {
+    const container = document.getElementById('surprise-toggle');
+    if (!container) return;
+    container.innerHTML = `<button class="surprise-btn" aria-pressed="false" title="Activar sorpresa">🎉</button>`;
+    const btn = container.querySelector('button');
+    const stored = localStorage.getItem('brutal:surprise') === '1';
+    setSurprise(stored);
+    if (stored) enableTilt();
+
+    btn.addEventListener('click', () => {
+      const current = localStorage.getItem('brutal:surprise') === '1';
+      const next = !current;
+      setSurprise(next);
+      if (next) enableTilt(); else disableTilt();
+      // small celebratory burst when enabling
+      if (next && !REDUCE) confettiBurst(window.innerWidth-100, window.innerHeight-100, 24);
+    });
+  })();
+</script>

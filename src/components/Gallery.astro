@@ -1,10 +1,19 @@
 ---
 export interface Props {
-  images: string[];
+  images: Array<Record<string, any>> | string[];
   title?: string;
 }
 
 const { images, title = "Galería de Imágenes" } = Astro.props;
+
+// Helper: genera srcset si la URL contiene un token de Cloudinary con w_###
+function buildCloudinarySrcset(url: any) {
+  if (!url || typeof url !== 'string') return '';
+  const match = url.match(/w_([0-9]+)/);
+  if (!match) return '';
+  const baseWidths = [400, 800, 1200, 1600];
+  return baseWidths.map(w => url.replace(/w_[0-9]+/, `w_${w}`) + ` ${w}w`).join(', ');
+}
 ---
 
 <div class="bg-brutal-white border-4 border-brutal-black shadow-brutal mb-8">
@@ -12,24 +21,46 @@ const { images, title = "Galería de Imágenes" } = Astro.props;
     <h3 class="font-brutal text-xl uppercase">{title}</h3>
   </div>
   
-  <div class="p-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pswp-gallery">
-      {images.map((image, index) => (
-        <a
-          href={image}
-          class="pswp-thumb block border-4 border-brutal-black shadow-brutal-sm hover:shadow-brutal transition-all duration-200 hover:-translate-y-1"
-          data-pswp-width="800"
-          data-pswp-height="600"
-          aria-label={`Ver imagen ${index + 1}`}
-        >
-          <img
-            src={image}
-            alt={`Imagen ${index + 1} del torneo`}
-            class="w-full h-48 object-cover"
-            loading="lazy"
-          />
-        </a>
-      ))}
+    <div class="p-4">
+    <div class="pswp-gallery masonry-gallery">
+      {images.map((image, index) => {
+        // soportar tanto array de strings como array de objetos
+        const imgObj = typeof image === 'string' ? { src: image } : image;
+        const src = imgObj.src || imgObj.image || imgObj.url;
+        const thumb = imgObj.thumbnail || imgObj.thumb || src;
+        const alt = imgObj.alt ?? imgObj.caption ?? `Imagen ${index + 1}`;
+        const caption = imgObj.caption ?? '';
+        const srcW = imgObj.srcWidth ?? imgObj.width ?? null;
+        const srcH = imgObj.srcHeight ?? imgObj.height ?? null;
+        const thumbW = imgObj.thumbnailWidth ?? imgObj.thumbWidth ?? null;
+        const thumbH = imgObj.thumbnailHeight ?? imgObj.thumbHeight ?? null;
+        const srcset = buildCloudinarySrcset(src);
+
+        return (
+          <a
+            href={src}
+            class="pswp-thumb block border-4 border-brutal-black shadow-brutal-sm hover:shadow-brutal transition-all duration-200 hover:-translate-y-1"
+            data-pswp-width={srcW ?? undefined}
+            data-pswp-height={srcH ?? undefined}
+            data-pswp-caption={caption}
+            aria-label={alt ? `Abrir imagen: ${alt}` : `Abrir imagen ${index + 1}`}
+          >
+            <div class="masonry-item">
+              <img
+                src={thumb}
+                alt={alt}
+                width={thumbW ?? undefined}
+                height={thumbH ?? undefined}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto object-cover block"
+                srcset={srcset}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+            </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 </div>
@@ -70,6 +101,13 @@ const { images, title = "Galería de Imágenes" } = Astro.props;
       pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js')
     });
 
+    // Emit an event when the gallery opens so SurpriseToggle can react
+    lightbox.on('open', (e) => {
+      // e?.data?.index might exist; try to capture click coordinates if available
+      const ev = new CustomEvent('gallery:opened', { detail: { index: e?.data?.index } });
+      document.dispatchEvent(ev);
+    });
+
     lightbox.init();
   });
 </script>
@@ -104,4 +142,26 @@ const { images, title = "Galería de Imágenes" } = Astro.props;
     border-top: 4px solid #000;
     padding-top: 8px;
   }
+
+    /* Masonry gallery: simple CSS columns approach */
+    :global(.masonry-gallery) {
+      column-gap: 1rem;
+      columns: 1;
+    }
+
+    @media (min-width: 640px) {
+      :global(.masonry-gallery) { columns: 2; }
+    }
+    @media (min-width: 1024px) {
+      :global(.masonry-gallery) { columns: 3; }
+    }
+    @media (min-width: 1280px) {
+      :global(.masonry-gallery) { columns: 4; }
+    }
+
+    :global(.masonry-item) {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      margin-bottom: 1rem;
+    }
 </style>
