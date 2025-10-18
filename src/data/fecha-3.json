@@ -26,13 +26,37 @@
       "resultado_local": 11,
       "resultado_visitante": 1,
       "estado": "finalizado"
+    },
+        {
+      "hora": "16:00",
+      "equipo_local": "Futuras Estrellas Nariño",
+      "equipo_visitante": "Cracks Futsalon Pasto",
+      "resultado_local": 3,
+      "resultado_visitante": 5,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "17:00",
+      "equipo_local": "Reto 365 Pasto", 
+      "equipo_visitante": "Lobeznos F.C. Tangua",
+      "resultado_local": 20,
+      "resultado_visitante": 0,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "15:00",
+      "equipo_local": "Semilleros F.C. Cumbal",
+      "equipo_visitante": "Tangua Futsal",
+      "resultado_local": 6,
+      "resultado_visitante": 7,
+      "estado": "finalizado"
     }
   ],
   "goleadores": [
     {
-      "nombre": "Zlatan Bastidas Zambrano",
+      "nombre": "Jhon Burbano Martinez",
       "equipo": "Reto 365 Pasto",
-      "goles": 7
+      "goles": 9
     },
     {
       "nombre": "Santiago Timana Diaz",
@@ -40,10 +64,16 @@
       "goles": 8
     },
     {
-      "nombre": "Anthony Calvache Galvis",
+      "nombre": "Zlatan Bastidas Zambrano",
       "equipo": "Cordillera F.C. Pasto",
-      "goles": 5
+      "goles": 7
+    },
+        {
+      "nombre": "Juan David Castillo Narvaez",
+      "equipo": "Cracks Futsalon Pasto",
+      "goles": 7
     }
+
   ],
   "imagenes": [
         {

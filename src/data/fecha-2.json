@@ -26,23 +26,47 @@
       "resultado_local": 1,
       "resultado_visitante": 6,
       "estado": "finalizado"
+    },
+        {
+      "hora": "16:30",
+      "equipo_local": "Cordillera Futsal",
+      "equipo_visitante": "Futuras Estrellas de Ipiales",
+      "resultado_local": 7,
+      "resultado_visitante": 0,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "17:30",
+      "equipo_local": "Elyon Futsal Club",
+      "equipo_visitante": "Tangua Futsal",
+      "resultado_local": 2,
+      "resultado_visitante": 6,
+      "estado": "finalizado"
+    },
+    {
+      "hora": "18:30",
+      "equipo_local": "Balón de Oro Futsal", 
+      "equipo_visitante": "Lobeznos Futsal Club",
+      "resultado_local": 4,
+      "resultado_visitante": 1,
+      "estado": "finalizado"
     }
   ],
   "goleadores": [
     {
-      "nombre": "Jhon Burbano Martinez",
+      "nombre": "Juan David Castillo Narvaez",
+      "equipo": "Cracks Futsalon Pasto",
+      "goles": 5
+    },
+    {
+      "nombre": "Johan Rosero Riascos", 
       "equipo": "Reto 365 Pasto",
       "goles": 5
     },
     {
-      "nombre": "Santiago Timana Diaz", 
-      "equipo": "Tangua Futsal",
-      "goles": 3
-    },
-    {
-      "nombre": "Aaron Sebastian Rico Ruano",
-      "equipo": "Cracks Futsalon Pasto", 
-      "goles": 3
+      "nombre": "Jhon Burbano Martinez",
+      "equipo": "Reto 365 Pasto", 
+      "goles": 5
     }
   ],
   "imagenes": [
